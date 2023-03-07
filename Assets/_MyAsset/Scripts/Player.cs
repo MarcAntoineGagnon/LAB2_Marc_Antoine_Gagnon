@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        transform.position = new Vector3(-45f, 0.1f, -45f);
+        transform.position = new Vector3(-45f, 1.7f, -45f);
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -37,14 +37,11 @@ public class Player : MonoBehaviour
         //_rb.AddForce(direction * Time.fixedDeltaTime * _vitesse); // Mouvement (glisse)
 
         // Rotation Joueur
-        //float angle = Mathf.Atan2(positionX, positionZ) * Mathf.Rad2Deg;
-
         if(direction.magnitude >= 0.1f)
         {
             Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);
         }
-            // transform.rotation = Quaternion.Euler(0f, angle, 0f).normalized;
 
 
 
