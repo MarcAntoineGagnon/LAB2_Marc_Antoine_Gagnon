@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = 500f;
     [SerializeField] private float _rotationSpeed = 500f;
     private Rigidbody _rb;
+    GestionJeu _gestionJeu;
 
     void Start()
     {
-        transform.position = new Vector3(-45f, 1.7f, -45f);
+        transform.position = new Vector3(-45f, 21.7f, -45f);
         _rb = GetComponent<Rigidbody>();
+        _gestionJeu = FindObjectOfType<GestionJeu>();
     }
 
     void FixedUpdate()
@@ -37,16 +40,17 @@ public class Player : MonoBehaviour
         //_rb.AddForce(direction * Time.fixedDeltaTime * _vitesse); // Mouvement (glisse)
 
         // Rotation Joueur
-        if(direction.magnitude >= 0.1f)
+        if(direction.magnitude >= 0.1f) // Si le joueur est en mouvement uniquement (garde son angle lorsque immobile)
         {
             Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);
         }
-
-
-
-
-
+    }
+    // Fin de la partie et arret du joueur
+    public void FinPartie()
+    {
+        _gestionJeu.EndGame();
+        gameObject.SetActive(false);
     }
 }
 
