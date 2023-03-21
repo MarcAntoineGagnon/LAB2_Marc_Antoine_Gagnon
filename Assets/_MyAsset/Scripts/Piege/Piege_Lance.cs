@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Piege_Lance : MonoBehaviour
 {
-    [SerializeField] private float _vitesse = 1f;
-    [SerializeField] private float _temps = 1f;
+    GestionJeu _gestionJeu;
+    Player _player;
+    [SerializeField] private float _vitesse = 10f;
+    [SerializeField] private float _temps = 0.5f;
     [SerializeField] private float _delais = 1f;
     private float _timer;
     private float _timerDelais;
     private bool _retour = false;
-   
+
+    private void Start()
+    {
+        _gestionJeu = FindObjectOfType<GestionJeu>();
+        _player = FindObjectOfType<Player>();
+    }
     void Update()
     {
         _timer += Time.deltaTime;
@@ -42,5 +49,20 @@ public class Piege_Lance : MonoBehaviour
             }
         }
 
+    }
+
+    // Si le joueur touche au lance il se fait empaler (+1 pointage + immobile jusqu'a ce que les lances s'enleve)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Touché!");
+            _gestionJeu.AugmenterPointage();
+            _player.immobile();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        _player.mobile();
     }
 }

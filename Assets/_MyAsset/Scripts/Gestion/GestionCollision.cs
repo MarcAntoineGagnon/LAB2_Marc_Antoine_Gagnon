@@ -13,12 +13,15 @@ public class GestionCollision : MonoBehaviour
         _touche = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player" && _touche == false)
         {
             _touche = true;
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            if(gameObject.GetComponent<MeshRenderer>() != null)
+            {
+                gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            }
             _gestionJeu.AugmenterPointage();
         }
     }

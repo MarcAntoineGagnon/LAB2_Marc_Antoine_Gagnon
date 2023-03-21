@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 500f;
     private Rigidbody _rb;
     GestionJeu _gestionJeu;
+    private bool _mobile = true;
 
     void Start()
     {
@@ -21,7 +22,10 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        MouvementsPlayer();
+        if(_mobile) 
+        { 
+           MouvementsPlayer();
+        }
     }
 
     private void MouvementsPlayer()
@@ -48,6 +52,16 @@ public class Player : MonoBehaviour
         }
         
 
+    }
+
+    public void immobile()
+    {
+        _mobile = false;
+    }
+
+    public void mobile()
+    {
+        _mobile= true;
     }
 
     // Fin de la partie et arret du joueur
