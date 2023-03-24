@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17276794, g: 0.21589158, b: 0.2978253, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5664,7 +5664,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
       propertyPath: _listPiege.Array.data[0]
+      value: 
+      objectReference: {fileID: 219202087}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[0]
       value: 
       objectReference: {fileID: 219202087}
     - target: {fileID: 6490693915956745509, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
@@ -7779,12 +7787,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5be4a689874cd64baae4ae3bcc3471a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tempsNiv1: 0
-  _tempsNiv2: 0
-  _tempsNiv3: 0
   _pointageNiv1: 0
   _pointageNiv2: 0
   _pointageNiv3: 0
+  _tempsNiv1: 0
+  _tempsNiv2: 0
+  _tempsNiv3: 0
 --- !u!4 &1179241469
 Transform:
   m_ObjectHideFlags: 0
@@ -10907,6 +10915,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
       propertyPath: _listPiege.Array.data[0]
       value: 
       objectReference: {fileID: 1415024391}
@@ -10932,6 +10944,34 @@ PrefabInstance:
       objectReference: {fileID: 2108976946}
     - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
       propertyPath: _listPiege.Array.data[6]
+      value: 
+      objectReference: {fileID: 426233521}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[0]
+      value: 
+      objectReference: {fileID: 1415024391}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[1]
+      value: 
+      objectReference: {fileID: 1269228708}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[2]
+      value: 
+      objectReference: {fileID: 364240068}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[3]
+      value: 
+      objectReference: {fileID: 847287918}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[4]
+      value: 
+      objectReference: {fileID: 1481172190}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[5]
+      value: 
+      objectReference: {fileID: 2108976946}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[6]
       value: 
       objectReference: {fileID: 426233521}
     - target: {fileID: 6490693915956745509, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
@@ -13697,6 +13737,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
       propertyPath: _listPiege.Array.data[0]
       value: 
       objectReference: {fileID: 682056788}
@@ -13722,6 +13766,34 @@ PrefabInstance:
       objectReference: {fileID: 1608815434}
     - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
       propertyPath: _listPiege.Array.data[6]
+      value: 
+      objectReference: {fileID: 544824180}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[0]
+      value: 
+      objectReference: {fileID: 682056788}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[1]
+      value: 
+      objectReference: {fileID: 169545804}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[2]
+      value: 
+      objectReference: {fileID: 1906224107}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[3]
+      value: 
+      objectReference: {fileID: 2002010061}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[4]
+      value: 
+      objectReference: {fileID: 310776585}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[5]
+      value: 
+      objectReference: {fileID: 1608815434}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[6]
       value: 
       objectReference: {fileID: 544824180}
     - target: {fileID: 6490693915956745509, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
@@ -14042,6 +14114,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
       propertyPath: _listPiege.Array.data[0]
       value: 
       objectReference: {fileID: 910199535}
@@ -14067,6 +14143,34 @@ PrefabInstance:
       objectReference: {fileID: 1550154431}
     - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
       propertyPath: _listPiege.Array.data[6]
+      value: 
+      objectReference: {fileID: 10640702}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[0]
+      value: 
+      objectReference: {fileID: 910199535}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[1]
+      value: 
+      objectReference: {fileID: 1603040419}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[2]
+      value: 
+      objectReference: {fileID: 124015029}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[3]
+      value: 
+      objectReference: {fileID: 893493760}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[4]
+      value: 
+      objectReference: {fileID: 799612817}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[5]
+      value: 
+      objectReference: {fileID: 1550154431}
+    - target: {fileID: 6490693915956745508, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
+      propertyPath: _listObstacle.Array.data[6]
       value: 
       objectReference: {fileID: 10640702}
     - target: {fileID: 6490693915956745509, guid: d24fed02e2ba4e345bc10017765b21d6, type: 3}
