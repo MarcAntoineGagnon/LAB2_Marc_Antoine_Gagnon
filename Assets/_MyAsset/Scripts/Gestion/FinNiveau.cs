@@ -7,7 +7,7 @@ public class FinNiveau : MonoBehaviour
 {
     Player _player;
     GestionJeu _gestionJeu;
-    private bool _finish = false;
+    private bool _finish = false; // Boolean si la partie est terminée
     void Start()
     {
         _player = FindObjectOfType<Player>();
@@ -20,11 +20,11 @@ public class FinNiveau : MonoBehaviour
         {
             _finish = true;
             
-            int noScene = SceneManager.GetActiveScene().buildIndex;
-            _gestionJeu.SetTempsNiv(noScene);
-            _gestionJeu.SetPointageNiv(noScene);
+            int noScene = SceneManager.GetActiveScene().buildIndex; // Selection du numéro de scene
+            _gestionJeu.SetTempsNiv(noScene); // Enregistrement du temps du niveau
+            _gestionJeu.SetPointageNiv(noScene); // Enregistrement du pointage du niveau
 
-            if (noScene == 2)
+            if (noScene == 2) // Vérification si c'est la dernière scène du jeu
             {
                 _player.FinPartie();
                 Debug.Log("Partie Terminer !! \n");
@@ -47,12 +47,12 @@ public class FinNiveau : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(noScene + 1);
+                SceneManager.LoadScene(noScene + 1); // changement de scene
             }
         }
     }
-
-    public float Temps_final()
+    
+    public float Temps_final() // Obtention du temps final du jeu (temps + pointage de tout les niveaux)
     {
         float temps = Time.time;
         temps = temps + _gestionJeu.GetPointage();

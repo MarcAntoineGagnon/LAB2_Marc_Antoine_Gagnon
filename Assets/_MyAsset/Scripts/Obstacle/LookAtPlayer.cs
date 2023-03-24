@@ -8,12 +8,12 @@ public class LookAtPlayer : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player"); // Trouver le gameObject joueur
     }
 
 
     void Update()
     {
-        this.transform.LookAt(player.transform);
+        this.transform.LookAt(player.transform); // Transformer la rotation pour qu'il regarde le joueur
     }
 }

@@ -7,12 +7,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Attribut
-    [SerializeField] private float _speed = 500f;
-    [SerializeField] private float _rotationSpeed = 500f;
-    private Rigidbody _rb;
+    [SerializeField] private float _speed = 500f;           // Vitesse du joueur
+    [SerializeField] private float _rotationSpeed = 500f;   // Vitesse de rotation
+    private Rigidbody _rb; // RigidBody du joueur
     GestionJeu _gestionJeu;
-    private bool _mobile = true;
+    private bool _mobile = true; // Boolean si le joueur peut bouger
 
+    // positionnement de départ du joueur
     void Start()
     {
         transform.position = new Vector3(-45f, 21.7f, -45f);
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // fonction de mouvement du jouuer
     private void MouvementsPlayer()
     {
         // attribut Déplacement normal
@@ -42,23 +44,23 @@ public class Player : MonoBehaviour
         else
             _rb.velocity = direction.normalized * Time.fixedDeltaTime * _speed; // Mouvement normale
 
-        //_rb.AddForce(direction * Time.fixedDeltaTime * _vitesse); // Mouvement (glisse)
-
         // Rotation Joueur
         if(direction.magnitude >= 0.1f) // Si le joueur est en mouvement uniquement (garde son angle lorsque immobile)
         {
             Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, _rotationSpeed * Time.deltaTime); // rotation en fonction de l'angle
         }
         
 
     }
 
+    // Fonction pour empêcher le joueur de bouger
     public void immobile()
     {
         _mobile = false;
     }
 
+    // Fonction pour redonner la possibilité au joueur de bouger
     public void mobile()
     {
         _mobile= true;

@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GestionJeu : MonoBehaviour
 {
-    private int _pointage;
-    private bool _endGame = false;
-    public float _tempsNiv1;
-    public float _tempsNiv2;
-    public float _tempsNiv3;
-    public int _pointageNiv1;
-    public int _pointageNiv2;
-    public int _pointageNiv3;
+    private int _pointage;          // Nombres d'obstacles touchés au total
+    public int _pointageNiv1;       // Nombre d'obstacles touchés au niveau 1
+    public int _pointageNiv2;       // Nombre d'obstacles touchés au niveau 2
+    public int _pointageNiv3;       // Nombre d'obstacles touchés au niveau 3
+    public float _tempsNiv1;        // Temps du niveau 1 
+    public float _tempsNiv2;        // Temps du niveau 2 
+    public float _tempsNiv3;        // Temps du niveau 3 
+    private bool _endGame = false;  // Détermine si le jeu est terminer
 
     // Détection si il existe déjà un gameObject GestionJeu (si oui on efface le nouveau pour conserver le temps)
     private void Awake()
@@ -95,11 +95,11 @@ public class GestionJeu : MonoBehaviour
         }
         else if (noScene == 1)
         {
-            _pointageNiv2 = GetPointage() - _pointageNiv1;
+            _pointageNiv2 = GetPointage() - _pointageNiv1; // pointage total - niveau précédent
         }
         else if (noScene == 2)
         {
-            _pointageNiv3 = GetPointage() - _pointageNiv1 - _pointageNiv2;
+            _pointageNiv3 = GetPointage() - _pointageNiv1 - _pointageNiv2; // pointage total - niveau précédent
         }
     }
 
@@ -134,7 +134,7 @@ public class GestionJeu : MonoBehaviour
         return _pointageNiv3;
     }
 
-    // Methode retourner temps Final de chaque niveau
+    // Methode retourner temps Final de chaque niveau (temps + pointage)
     public float GetTempsFinalNiv1()
     {
         float temps = GetTempsNiv1();

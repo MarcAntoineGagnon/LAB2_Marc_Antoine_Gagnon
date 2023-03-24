@@ -5,12 +5,12 @@ using UnityEngine;
 public class Piege_flamme : MonoBehaviour
 {
     GestionJeu _gestionJeu;
-    [SerializeField] private float _vitesse = 10f;
-    [SerializeField] private float _temps = 0.5f;
-    [SerializeField] private float _delais = 1f;
-    private float _timer;
-    private float _timerDelais;
-    private bool _retour = false;
+    [SerializeField] private float _vitesse = 10f;  // vitesse de sortie des lance
+    [SerializeField] private float _temps = 0.5f;   // temps de la translation verticale
+    [SerializeField] private float _delais = 1f;    // temps avant le début de la translation (avant de sortir et avant de rentrer)
+    private float _timer;           // Chronomètre pour le temps de la translation
+    private float _timerDelais;     // Chronomètre pour le temps du délais
+    private bool _retour = false;   // Boolean pour connaitre le sens de la translation
 
     private void Start()
     {
@@ -18,22 +18,24 @@ public class Piege_flamme : MonoBehaviour
     }
     void Update()
     {
-        _timer += Time.deltaTime;
-        if (_timer < _temps)
+        _timer += Time.deltaTime; // Augmentation du timer Translation
+
+        if (_timer < _temps) // Détection si la translation n'est pas terminer
         {
-            if (!_retour)
+            if (!_retour) // Si les lances sorte du sol
             {
-                transform.Translate(Vector3.up * Time.deltaTime * _vitesse);
+                transform.Translate(Vector3.up * Time.deltaTime * _vitesse); // Translation Verticale vers le haut
             }
-            else
+            else // Si les lances rentre dans le sol
             {
-                transform.Translate(Vector3.down * Time.deltaTime * _vitesse);
+                transform.Translate(Vector3.down * Time.deltaTime * _vitesse); // Translation Verticale vers le bas
             }
         }
         else
         {
-            _timerDelais += Time.deltaTime;
-            if (_timerDelais >= _delais && _retour == false)
+            _timerDelais += Time.deltaTime; // Augmentation du timer Delais
+
+            if (_timerDelais >= _delais && _retour == false) // Détection si le delais est terminer et si la lance sort ou rentre
             {
                 _timerDelais = 0f;
                 _timer = 0f;
