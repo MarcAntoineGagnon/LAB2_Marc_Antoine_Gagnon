@@ -56,7 +56,6 @@ public class Piege_Lance : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Touché!");
             _gestionJeu.AugmenterPointage();
             _player.immobile();
         }
